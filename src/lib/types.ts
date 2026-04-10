@@ -26,7 +26,10 @@ export type Project = {
   /** URL-friendly slug — must match the folder name in src/assets/image/projects/<slug>/ */
   slug: string;
   title: string;
+  /** Short one-liner shown in the card header */
   description: string;
+  /** Longer markdown-ish body shown when the card is expanded */
+  longDescription?: string;
   /** Stack ids referenced from data/stacks.ts (or free strings if not in the master list) */
   stack: string[];
   /** Project images. The first one is used as the cover. */
@@ -37,10 +40,16 @@ export type Project = {
    *  - "desktop" → landscape frames
    */
   orientation: "mobile" | "desktop";
-  /** Optional repo / demo links */
+  /** Mark as featured so it appears on the home page (top 3). */
+  featured?: boolean;
+  /** Optional external links */
   links?: {
     github?: string;
     demo?: string;
+    /** PDF report download link */
+    report?: string;
+    /** Presentation slide link */
+    slide?: string;
   };
   /** Optional year/period label */
   year?: string;

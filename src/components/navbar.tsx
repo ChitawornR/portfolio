@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { ThemeToggle } from "./theme-toggle";
 
 const links = [
@@ -11,7 +12,7 @@ const links = [
   { href: "contact", label: "Contact" },
 ];
 
-function scrollTo(id: string) {
+function scrollToId(id: string) {
   const el = document.getElementById(id);
   if (!el) return;
   el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -19,9 +20,14 @@ function scrollTo(id: string) {
 
 export function Navbar() {
   const [active, setActive] = useState("profile");
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === "/";
 
-  // Track active section with IntersectionObserver
+  // Track active section with IntersectionObserver (only when on home page).
   useEffect(() => {
+    if (!isHome) return;
+
     const observers: IntersectionObserver[] = [];
 
     links.forEach(({ href }) => {
@@ -39,14 +45,23 @@ export function Navbar() {
     });
 
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [isHome]);
+
+  const go = (id: string) => {
+    if (isHome) {
+      scrollToId(id);
+    } else {
+      // Route back to home with the section hash and let the browser handle the anchor.
+      router.push(`/#${id}`);
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <button
           type="button"
-          onClick={() => scrollTo("profile")}
+          onClick={() => go("profile")}
           className="hover:cursor-pointer font-mono text-sm font-bold tracking-tight text-[var(--foreground)]"
         >
           <span className="text-[var(--accent)]">&gt;_</span> chittaworn
@@ -55,12 +70,12 @@ export function Navbar() {
 
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => {
-            const isActive = active === l.href;
+            const isActive = isHome && active === l.href;
             return (
               <li key={l.href}>
                 <button
                   type="button"
-                  onClick={() => scrollTo(l.href)}
+                  onClick={() => go(l.href)}
                   className={`hover:cursor-pointer relative rounded-md px-3 py-2 font-mono text-xs uppercase tracking-wider transition-colors ${
                     isActive
                       ? "text-[var(--accent)]"

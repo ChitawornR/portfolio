@@ -18,18 +18,24 @@ export const stacks: Stack[] = [
   { id: "java", name: "Java", icon: "lab la-java", category: "language" },
   { id: "python", name: "Python", icon: "lab la-python", category: "language" },
   { id: "go", name: "Go", icon: "las la-terminal", category: "language" },
+  { id: "dart", name: "Dart", icon: "las la-bullseye", category: "language" },
 
   // Frameworks / UI
   { id: "react", name: "React", icon: "lab la-react", category: "framework" },
   { id: "next", name: "Next.js", icon: "las la-bolt", category: "framework" },
   { id: "react-native", name: "React Native", icon: "lab la-react", category: "mobile" },
   { id: "expo", name: "Expo", icon: "las la-mobile", category: "mobile" },
+  { id: "flutter", name: "Flutter", icon: "las la-mobile-alt", category: "mobile" },
+  { id: "bloc", name: "BLoC", icon: "las la-cubes", category: "mobile" },
   { id: "tailwind", name: "Tailwind CSS", icon: "las la-wind", category: "framework" },
   { id: "swing", name: "Java Swing", icon: "las la-desktop", category: "framework" },
 
   // Backend / Runtime
   { id: "node", name: "Node.js", icon: "lab la-node-js", category: "framework" },
   { id: "express", name: "Express", icon: "las la-server", category: "framework" },
+  { id: "grpc", name: "gRPC", icon: "las la-network-wired", category: "framework" },
+  { id: "protobuf", name: "Protocol Buffers", icon: "las la-file-code", category: "framework" },
+  { id: "microservices", name: "Microservices", icon: "las la-cubes", category: "framework" },
 
   // Databases
   { id: "mongodb", name: "MongoDB", icon: "las la-leaf", category: "database" },
