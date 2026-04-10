@@ -57,7 +57,6 @@ The site is a single-page, scroll-based layout with 5 main sections:
 ### ❌ Strictly forbidden
 - **NO progress bars / status bars / percentage meters** for displaying skill level of any stack.
   → Show stacks as **icon + name only** (e.g., icon grid, badge, chip).
-- Do NOT copy the style from the [old portfolio repo](https://github.com/ChitawornR/portfolio) — use it only as a reference for content / personal info.
 
 ### Icons / Logos for stacks
 Use **Line Awesome** via CDN only. Add it to the `<head>` of `app/layout.tsx`:
@@ -134,7 +133,6 @@ For details about any project (description, real stack, links), fetch from GitHu
 Other repos that may become additional projects:
 - `BangkokTravel` — Mobile (ITE-439), Bangkok tourist attractions
 - `XO-Game` — XO game with React + Node + MongoDB
-- `portfolio` — old portfolio (reference content only, **do not copy style**)
 
 ---
 
