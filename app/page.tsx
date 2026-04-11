@@ -2,8 +2,9 @@ import { Navbar } from "@/src/components/navbar";
 import { ProfileSection } from "@/src/components/sections/profile-section";
 import { StackSection } from "@/src/components/sections/stack-section";
 import { EducationSection } from "@/src/components/sections/education-section";
-import { ActivitiesSection } from "@/src/components/sections/activities-section";
+import { ExperienceSection } from "@/src/components/sections/experience-section";
 import { ProjectsSection } from "@/src/components/sections/projects-section";
+import { ActivitiesSection } from "@/src/components/sections/activities-section";
 import { ContactSection } from "@/src/components/sections/contact-section";
 
 export default function Home() {
@@ -14,8 +15,9 @@ export default function Home() {
         <ProfileSection />
         <StackSection />
         <EducationSection />
-        <ActivitiesSection />
+        <ExperienceSection />
         <ProjectsSection />
+        <ActivitiesSection />
         <ContactSection />
       </main>
     </>

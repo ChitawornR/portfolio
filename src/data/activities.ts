@@ -12,6 +12,9 @@ import tniIcbir from "@/src/assets/image/activities/tni-icbir.jpg";
  *   1. Drop the image into `src/assets/image/activities/`.
  *   2. Import it above.
  *   3. Add a new entry to the array below.
+ *
+ * `featured: true` → shown on the home page (top 3).
+ * All activities are shown on the /activities page.
  */
 export const activities: Activity[] = [
   {
@@ -19,12 +22,21 @@ export const activities: Activity[] = [
     title: "ICBIR Conference",
     description: "Attended the International Conference on Business and Industrial Research at TNI.",
     image: tniIcbir,
+    featured: true,
+  },
+  {
+    id: "ta-amornpan",
+    title: "Teaching Assistant (C#, Java)",
+    description: "Served as a teaching assistant for Aj. Amornpan's class.",
+    image: taAmornpan,
+    featured: true,
   },
   {
     id: "gen-ai-card",
     title: "Generative AI Workshop",
     description: "Hands-on session exploring practical use cases of generative AI.",
     image: genAiCard,
+    featured: true,
   },
   {
     id: "staff-gen-ai-meeting",
@@ -43,12 +55,6 @@ export const activities: Activity[] = [
     title: "MOS Olympic",
     description: "Participated in the Microsoft Office Specialist Olympic competition.",
     image: mosOlympic,
-  },
-  {
-    id: "ta-amornpan",
-    title: "Teaching Assistant (C#, Java)",
-    description: "Served as a teaching assistant for Aj. Amornpan's class.",
-    image: taAmornpan,
   },
   {
     id: "staff-tni-day",

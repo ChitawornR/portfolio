@@ -20,6 +20,8 @@ export type Activity = {
   description: string;
   date?: string;
   image: StaticImageData;
+  /** Mark as featured so it appears on the home page (top 3). */
+  featured?: boolean;
 };
 
 export type Project = {
@@ -53,6 +55,21 @@ export type Project = {
   };
   /** Optional year/period label */
   year?: string;
+};
+
+export type Experience = {
+  id: string;
+  company: string;
+  role: string;
+  location?: string;
+  period: string;
+  /** Bullet points describing responsibilities / achievements */
+  highlights: string[];
+  /** Stack ids referenced from data/stacks.ts (rendered as chips) */
+  stack?: string[];
+  logo?: StaticImageData;
+  /** Optional company website */
+  website?: string;
 };
 
 export type Education = {

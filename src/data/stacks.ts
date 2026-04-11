@@ -44,6 +44,8 @@ export const stacks: Stack[] = [
 
   // Cloud / DevOps
   { id: "aws", name: "AWS", icon: "lab la-aws", category: "cloud" },
+  { id: "aws-lambda", name: "AWS Lambda", icon: "las la-bolt", category: "cloud" },
+  { id: "serverless", name: "Serverless", icon: "las la-cloud", category: "cloud" },
   { id: "docker", name: "Docker", icon: "lab la-docker", category: "cloud" },
 
   // Tools

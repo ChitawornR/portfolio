@@ -7,7 +7,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="relative px-6 py-32">
       <div className="mx-auto max-w-4xl text-center">
-        <SectionHeading index="04" title="Contact" />
+        <SectionHeading index="05" title="Contact" />
 
         <Reveal>
           <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">

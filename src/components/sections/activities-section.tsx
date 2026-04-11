@@ -1,43 +1,39 @@
-import Image from "next/image";
+import Link from "next/link";
 import { activities } from "@/src/data/activities";
 import { SectionHeading } from "../section-heading";
 import { Reveal } from "../reveal";
+import { ActivityCard } from "../activity-card";
 
 export function ActivitiesSection() {
+  // Featured activities appear on the home page. Fall back to the first 3 if none are marked.
+  const featured = activities.filter((a) => a.featured);
+  const visible = (featured.length > 0 ? featured : activities).slice(0, 3);
+
   return (
     <section id="activities" className="relative px-6 py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          index="02"
+          index="04"
           title="Activities"
           subtitle="Beyond the keyboard."
         />
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {activities.map((a, i) => (
+          {visible.map((a, i) => (
             <Reveal key={a.id} delay={i * 60}>
-              <article className="card-hover group relative h-full overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--background-elev)]">
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <Image
-                    src={a.image}
-                    alt={a.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-transparent to-transparent opacity-80" />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--accent)]">
-                    {a.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
-                    {a.description}
-                  </p>
-                </div>
-              </article>
+              <ActivityCard activity={a} />
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            href="/activities"
+            className="card-hover hover:cursor-pointer inline-flex items-center gap-3 rounded-md border border-[var(--accent)] bg-[var(--accent)]/10 px-6 py-3 font-mono text-sm text-[var(--accent)] transition-colors hover:bg-[var(--accent)]/20"
+          >
+            <span className="text-[var(--accent)]">$</span> view_all_activities
+            <i className="las la-arrow-right text-lg" />
+          </Link>
         </div>
       </div>
     </section>
