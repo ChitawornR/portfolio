@@ -15,7 +15,7 @@ export function ActivitiesSection() {
         <SectionHeading
           index="04"
           title="Activities"
-          subtitle="Beyond the keyboard."
+          subtitle="What I joined."
         />
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -15,7 +15,7 @@ export function EducationSection() {
         <SectionHeading
           index="01"
           title="Education"
-          subtitle="Where I learned the craft."
+          subtitle="Where I studied."
         />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

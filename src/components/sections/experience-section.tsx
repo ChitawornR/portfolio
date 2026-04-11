@@ -13,7 +13,7 @@ export function ExperienceSection() {
         <SectionHeading
           index="02"
           title="Experience"
-          subtitle="Where I have worked."
+          subtitle="Where I worked."
         />
 
         <div className="relative flex flex-col gap-10">

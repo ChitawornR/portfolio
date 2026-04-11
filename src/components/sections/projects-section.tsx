@@ -15,7 +15,7 @@ export function ProjectsSection() {
         <SectionHeading
           index="03"
           title="Projects"
-          subtitle="Things I have shipped."
+          subtitle="What I built."
         />
 
         <div className="flex flex-col gap-10">
