@@ -194,17 +194,25 @@ export function ExpandableProjectCard({ project, index, defaultExpanded = false 
 
       {/* View more / less toggle */}
       {hasLong && (
-        <div className="mt-5">
+        <div className="mt-6">
           <button
             type="button"
             onClick={() => setExpanded((v) => !v)}
             aria-expanded={expanded}
-            className="hover:cursor-pointer inline-flex items-center gap-2 rounded-md border border-[var(--border)] bg-[var(--background)] px-4 py-2 font-mono text-xs text-[var(--foreground)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            className="group/btn hover:cursor-pointer relative inline-flex items-center gap-2.5 overflow-hidden rounded-md border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-2.5 font-mono text-xs font-semibold uppercase tracking-wider text-[var(--accent)] shadow-[0_0_0_1px_var(--accent-glow),0_4px_20px_-6px_var(--accent-glow)] transition-all duration-300 hover:bg-[var(--accent)]/20 hover:shadow-[0_0_0_1px_var(--accent),0_6px_24px_-4px_var(--accent-glow)]"
           >
-            <i
-              className={`las ${expanded ? "la-angle-up" : "la-angle-down"} text-sm transition-transform`}
+            {/* animated shine */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[var(--accent)]/20 to-transparent transition-transform duration-700 group-hover/btn:translate-x-full"
             />
-            {expanded ? "View less" : "View more"}
+            <span className="text-[var(--accent)]">$</span>
+            {expanded ? "view_less" : "view_more"}
+            <i
+              className={`las la-angle-down text-sm transition-transform duration-300 ${
+                expanded ? "rotate-180" : ""
+              }`}
+            />
           </button>
         </div>
       )}
